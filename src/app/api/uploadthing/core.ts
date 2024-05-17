@@ -1,4 +1,5 @@
 import { auth } from "@clerk/nextjs/server";
+// import { auth, clerkClient } from "@clerk/nextjs/server"; // Uncomment this if you want to use Clerk metadata
 import { createUploadthing, type FileRouter } from "uploadthing/next";
 import { UploadThingError } from "uploadthing/server";
 import { db } from "~/server/db";
@@ -18,6 +19,9 @@ export const ourFileRouter = {
 
       // If you throw, the user will not be able to upload
       if (!user.userId) throw new UploadThingError("Unauthorized");
+      // const fullUserData = await clerkClient.users.getUser(user.userId);
+      // if (!fullUserData?.privateMetadata?.["can-upload"] !== true)
+      //   throw new UploadThingError("User doesn't have permission to upload");
       const { success } = await ratelimit.limit(user.userId);
       if (!success) throw new UploadThingError("Rate limit exceeded");
       // Whatever is returned here is accessible in onUploadComplete as `metadata`
