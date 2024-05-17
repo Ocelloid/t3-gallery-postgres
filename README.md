@@ -14,8 +14,8 @@
 - [x] Error management (w/ Sentry)
 - [x] Routing/image page (parallel route)
 - [x] Add toasts
-- [ ] Analytics (posthog)
-- [ ] Delete button (w/ Server Actions)
+- [x] Analytics (posthog)
+- [x] Delete button (w/ Server Actions)
 - [ ] Ratelimiting (upstash)
 - [ ] Make it deploy (self-hosted)
 - [ ] Switch to a self-hosted mysql db
