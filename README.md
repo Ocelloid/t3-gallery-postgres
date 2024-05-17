@@ -17,5 +17,3 @@
 - [x] Analytics (posthog)
 - [x] Delete button (w/ Server Actions)
 - [x] Ratelimiting (upstash)
-- [ ] Make it deploy (self-hosted)
-- [ ] Switch to a self-hosted mysql db
