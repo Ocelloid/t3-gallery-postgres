@@ -1,22 +1,11 @@
-import { getImage } from "~/server/db/queries";
-import Image from "next/image";
+import FullPageImageView from "~/app/components/full-image-page";
 
 export default async function PhotoPage({
-  params: { id },
+  params: { id: photoId },
 }: {
   params: { id: string };
 }) {
-  const idAsNumber = Number(id);
+  const idAsNumber = Number(photoId);
   if (Number.isNaN(idAsNumber)) throw new Error("Invalid id");
-  const image = await getImage(idAsNumber);
-  return (
-    <div className="items-center justify-center">
-      <Image
-        src={image.url}
-        alt="gallery image"
-        style={{ objectFit: "cover" }}
-        fill={true}
-      />
-    </div>
-  );
+  return <FullPageImageView id={idAsNumber} />;
 }
