@@ -75,6 +75,10 @@ export default function SimpleUploadButton() {
   const router = useRouter();
   const posthog = usePostHog();
   const { inputProps } = useUploadThingInputProps("imageUploader", {
+    onUploadError(error) {
+      posthog.capture("upload-error", { error });
+      toast("Upload failed", { duration: 5000, id: "upload-error" });
+    },
     onUploadBegin() {
       posthog.capture("upload-begin");
       toast(
