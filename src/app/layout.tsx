@@ -6,6 +6,7 @@ import TopNav from "./_components/topnav";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "~/app/api/uploadthing/core";
+import { Toaster } from "~/components/ui/sonner";
 
 export const metadata = {
   title: "T3 Gallery Postgres",
@@ -30,6 +31,7 @@ export default function RootLayout({
             <main className="overflow-y-auto">{children}</main>
           </div>
           {modal}
+          <Toaster />
           <div id="modal-root" />
         </body>
       </html>
