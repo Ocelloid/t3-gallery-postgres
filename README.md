@@ -13,9 +13,9 @@
 - [x] Use Next/Image component
 - [x] Error management (w/ Sentry)
 - [x] Routing/image page (parallel route)
-- [ ] Add toasts
-- [ ] Delete button (w/ Server Actions)
+- [x] Add toasts
 - [ ] Analytics (posthog)
+- [ ] Delete button (w/ Server Actions)
 - [ ] Ratelimiting (upstash)
 - [ ] Make it deploy (self-hosted)
 - [ ] Switch to a self-hosted mysql db
